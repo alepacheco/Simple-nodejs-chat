@@ -1,4 +1,5 @@
-var socket = io.connect('https://chat-tik.herokuapp.com:80', { 'forceNew': true });
+//var socket = io.connect('https://chat-tik.herokuapp.com:80', { 'forceNew': true });
+var sokcet = io.connect()
 
 socket.on('messages', function(data) {  
   console.log(data);
