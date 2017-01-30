@@ -1,0 +1,20 @@
+body, .send {
+	background-color: #FFA552;
+}
+
+body {
+	margin-left: 24px;
+}
+
+.send {
+	margin: 0;
+	padding: 0;
+}
+.button {
+    display: inline-block;
+    padding: 1em;
+    background-color: #79BD9A;
+    text-decoration: none;
+    color: white;
+}
+
