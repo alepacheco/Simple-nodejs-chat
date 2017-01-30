@@ -1,5 +1,4 @@
 var socket = io();
-
 socket.on('messages', function(data) {  
   console.log(data);
   render(data);
