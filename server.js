@@ -28,5 +28,5 @@ io.on('connection', function(socket) {
 });
 
 server.listen(process.env.PORT, function() {  
-  console.log("Servidor en http://localhost:80");
+  console.log("Servidor en "+ process.env.PORT );
 });
