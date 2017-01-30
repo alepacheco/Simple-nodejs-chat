@@ -4,7 +4,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 var messages = [];
-var buffer_lengt = 20;
+var buffer_lengt = 30;
 
 app.use(express.static('public'));
 
@@ -27,6 +27,6 @@ io.on('connection', function(socket) {
   });
 });
 
-server.listen(80, function() {  
-  console.log("Servidor en "+ process.env.PORT );
+server.listen(process.env.PORT, function() {  
+  console.log("Servidor en "+ process.env.PORT);
 });
