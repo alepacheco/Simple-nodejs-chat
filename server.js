@@ -4,7 +4,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 var messages = [];
-var buffer_lengt = 30;
+var buffer_lengt = 45;
 
 app.use(express.static('public'));
 
