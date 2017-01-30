@@ -27,6 +27,6 @@ io.on('connection', function(socket) {
   });
 });
 
-server.listen(8080, function() {  
-  console.log("Servidor en http://localhost:8080");
+server.listen(80, function() {  
+  console.log("Servidor en http://localhost:80");
 });
