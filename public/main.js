@@ -1,4 +1,4 @@
-var socket = io.connect('https://chat-tik.herokuapp.com:' + process.env.PORT, { 'forceNew': true });
+var socket = io();
 
 socket.on('messages', function(data) {  
   console.log(data);

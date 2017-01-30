@@ -27,6 +27,6 @@ io.on('connection', function(socket) {
   });
 });
 
-server.listen(process.env.PORT, function() {  
+server.listen(process.env.PORT || 8080, function() {  
   console.log("Servidor en "+ process.env.PORT);
 });
