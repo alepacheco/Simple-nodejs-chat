@@ -4,8 +4,8 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 var messages = [];
-var buffer_lengt = 45;
-var title = "";
+var buffer_lengt = 25;
+var title = "Bienvenido a Chat TIC";
 
 app.use(express.static('public'));
 
