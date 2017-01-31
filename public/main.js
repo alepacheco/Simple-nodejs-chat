@@ -7,14 +7,12 @@ socket.on('messages', function(data) {
 function render (data) {
 
   var html = data.map(function(elem, index) {
-    return(`<div class="animated slideInLeft">
+    return(`<div>
               <strong>${elem.author}</strong>:
               <em>${elem.text}</em>
             </div>`);
   }).join(" ");
   document.getElementById('messages').innerHTML = html;
-  // Remove animated class of previous messages
-  $('.animated div:not(:last-child').removeClass('animated')
   return false;
 }
 
@@ -25,6 +23,10 @@ function addMessage(e) {
   };
   if (message.author == "" || message.text == "") {
   	alert("Write something");
+  	return false;
+  } 
+  if (message.text == "delete") {
+  	socket.emit('delete-all');
   	return false;
   }
   socket.emit('new-message', message);

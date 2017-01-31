@@ -25,6 +25,9 @@ io.on('connection', function(socket) {
       io.sockets.emit('messages', messages);      
     }
   });
+  socket.on('delete-all', function (data) {
+    messages = [];
+  });
 });
 
 server.listen(process.env.PORT, function() {  
