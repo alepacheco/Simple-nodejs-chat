@@ -6,6 +6,9 @@ socket.on('messages', function(data) {
 socket.on('title', function(data) {
 	$('#title').text(data);
 })
+socket.on('refresh', function() {
+	return true;
+})
 
 function render (data) {
 
