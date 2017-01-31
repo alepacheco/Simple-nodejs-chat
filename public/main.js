@@ -30,7 +30,7 @@ function addMessage(e) {
   } 
   if (message.text == "delete") {
   	socket.emit('delete-all');
-  	return false;
+  	return true;
   }
   if (message.author == "title") {
   	socket.emit('change-title', message.text);
