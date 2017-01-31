@@ -21,7 +21,10 @@ function addMessage(e) {
     author: document.getElementById('username').value,
     text: document.getElementById('texto').value
   };
-  if (message.author)
+  if (message.author == "" or message.text == "") {
+  	alert("Write something");
+  	return false;
+  }
   socket.emit('new-message', message);
   return false;
 }
