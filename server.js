@@ -31,9 +31,12 @@ io.on('connection', function(socket) {
 
   socket.on('delete-all', function (data) {
     messages = [];
+    io.sockets.emit('refresh');
   });
   socket.on('change-title', function (data) {
-    io.sockets.emit('title', data.text);
+    io.sockets.emit('title', data);
+    title = data;
+    io.sockets.emit('refresh');
   });
 });
 
