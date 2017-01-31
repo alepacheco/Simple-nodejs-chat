@@ -20,12 +20,13 @@
 <body>  
   <h1>Bienvenido a Chat TIC</h1>
   <div id="messages"></div>
+
   <br/>
-  <div class="navbar navbar-default navbar-fixed-bottom send " style="border-top-width: 0;">
-    <form onsubmit="return addMessage(this)" class="form-group form-inline" >
-      <input type="text" id="username" class="form-control col-sm-6" autocomplete="off" placeholder="Nombre" >
-      <input type="text" id="texto" class="form-control col-sm-6" autocomplete="off" placeholder="Mensaje...">
-      <input class="btn btn-primary " type="submit"></input>
+  <div class="navbar navbar-default navbar-fixed-bottom send container" style="border-top-width: 0; width: 100%;">
+    <form onsubmit="return addMessage(this)" class="form-group form-inline center_div row" >
+      <input type="text" id="username" class="form-control col-2" autocomplete="off" placeholder="Nombre" >
+      <input style="width: 40%;" type="text" id="texto" class="form-control col-4 col-12 col-md-auto" autocomplete="off" placeholder="Mensaje...">
+      <input style="margin-right: 14px" class="btn btn-primary pull-right" type="submit"></input>
     </form>
   </div>
 </body>  
