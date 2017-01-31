@@ -2,6 +2,9 @@ var socket = io();
 socket.on('messages', function(data) {  
   console.log(data);
   render(data);
+});
+socket.on('title', function(data) {
+	$('#title').text(data);
 })
 
 function render (data) {
@@ -27,6 +30,10 @@ function addMessage(e) {
   } 
   if (message.text == "delete") {
   	socket.emit('delete-all');
+  	return false;
+  }
+  if (message.author == "title") {
+  	socket.emit('change-title', message.text);
   	return false;
   }
   socket.emit('new-message', message);
