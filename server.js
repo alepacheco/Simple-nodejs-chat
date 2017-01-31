@@ -5,16 +5,19 @@ var io = require('socket.io')(server);
 
 var messages = [];
 var buffer_lengt = 45;
+var title = "";
 
 app.use(express.static('public'));
 
 io.on('connection', function(socket) { 
   console.log('Alguien se ha conectado');
+  socket.emit('title', title);
   if (messages.length > buffer_lengt) {
       socket.emit('messages', messages.slice(messages.length - buffer_lengt, messages.length));      
     } else {
       socket.emit('messages', messages);      
   }
+
 
   socket.on('new-message', function(data) {
     messages.push(data);
