@@ -7,7 +7,7 @@ socket.on('messages', function(data) {
 function render (data) {
 
   var html = data.map(function(elem, index) {
-    return(`<div>
+    return(`<div class="animated slideInLeft">
               <strong>${elem.author}</strong>:
               <em>${elem.text}</em>
             </div>`);
@@ -21,6 +21,7 @@ function addMessage(e) {
     author: document.getElementById('username').value,
     text: document.getElementById('texto').value
   };
+  if (message.author)
   socket.emit('new-message', message);
   return false;
 }
