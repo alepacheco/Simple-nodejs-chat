@@ -23,7 +23,7 @@ function addMessage(e) {
     author: document.getElementById('username').value,
     text: document.getElementById('texto').value
   };
-  if (message.author == "" or message.text == "") {
+  if (message.author == "" || message.text == "") {
   	alert("Write something");
   	return false;
   }
