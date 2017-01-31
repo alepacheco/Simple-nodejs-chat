@@ -4,7 +4,8 @@ socket.on('messages', function(data) {
   render(data);
 })
 
-function render (data) {  
+function render (data) {
+
   var html = data.map(function(elem, index) {
     return(`<div>
               <strong>${elem.author}</strong>:
@@ -12,6 +13,7 @@ function render (data) {
             </div>`);
   }).join(" ");
   document.getElementById('messages').innerHTML = html;
+  return false;
 }
 
 function addMessage(e) { 
