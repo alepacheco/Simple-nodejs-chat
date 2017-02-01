@@ -32,7 +32,7 @@ function addMessage(e) {
     text: document.getElementById('texto').value
   };
   if (message.author == "" || message.text == "") {
-  	alert("Write something");
+  	alert("No sea timido 😘");
   	return false;
   } 
   if (message.text == "delete") {
