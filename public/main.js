@@ -1,4 +1,6 @@
+// Conectar al servidor
 var socket = io();
+// cuando reciva un envento (mensaje, title, ...) hacer lo que sea
 socket.on('messages', function(data) {  
   console.log(data);
   render(data);
@@ -10,8 +12,8 @@ socket.on('refresh', function() {
 	return true;
 })
 
+// añadir un mesaje al dom
 function render (data) {
-
   var html = data.map(function(elem, index) {
     return(`<div>
               <strong>${elem.author}</strong>:
@@ -22,6 +24,8 @@ function render (data) {
   return false;
 }
 
+// Envia el mensaje al servidor, el mensaje de mustra 
+// en la pantalla al recivirlo del servidor no directamente
 function addMessage(e) { 
   var message = {
     author: document.getElementById('username').value,
